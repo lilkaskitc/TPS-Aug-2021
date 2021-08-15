@@ -17,8 +17,3 @@ scale_features = [col for col in test.columns if 'f' in col]
 ss = StandardScaler()
 train[scale_features] = ss.fit_transform(train[scale_features])
 test[scale_features] = ss.transform(test[scale_features])
-
-## Pseudo Label
-test['loss'] = pd.read_csv("../input/xxx/submission.csv")['loss']
-
-
