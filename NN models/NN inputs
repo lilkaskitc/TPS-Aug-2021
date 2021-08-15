@@ -7,6 +7,15 @@ Quantile inputs
 Bins inputs
 Denoised + PCA inputs
 
+
+
+train = tr.copy()
+test = ts.copy()
+y = np.array(train['loss'])
+X = train.drop(['id','loss'],axis = 1)
+test = test.drop(['id'],axis = 1)
+xall = pd.concat([X,test],axis=0,copy=False).reset_index(drop=True)
+y.shape,X.shape,test.shape,xall.shape
 '''
 
 ## Quantile Normalization
