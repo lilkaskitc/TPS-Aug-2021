@@ -13,7 +13,12 @@ submission = pd.read_csv(INPUT / "sample_submission.csv")
 
 target = 'loss'
 
-scale_features = [col for col in test.columns if 'f' in col]
 ss = StandardScaler()
-train[scale_features] = ss.fit_transform(train[scale_features])
-test[scale_features] = ss.transform(test[scale_features])
+train = ss.fit_transform(train.drop("id", axis=1))
+test = ss.transform(test.drop("id", axis=1))
+
+## Pseudo Label
+pseudo = pd.read_csv("../input/xxx/submission.csv")[target]
+test_pseudo = pd.concat([test, pseudo], axis=1)
+all_pseudo = pd.concat([train, test_pseudo], axis=1)
+
