@@ -1,13 +1,3 @@
-'''
-https://www.kaggle.com/pourchot/in-python-tabular-denoising-residual-network
-The NN has 3 inputs and a residual block :
-
-Quantile inputs
-Bins inputs
-Denoised + PCA inputs
-*For comparison purpose, I try to keep the same files names as much as possible. Some R functions have no exact equivalent functions in Python (as far as I know) so there are some functions definition and workaround.
-
-'''
 
 ## NN Model definition
 
